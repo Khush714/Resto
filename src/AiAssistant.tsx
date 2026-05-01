@@ -1,5 +1,15 @@
 import * as React from "react";
 
+etype AiAssistantProps = {
+  staff: any;
+  orders: any[];
+  setPage: (page: string) => void;
+  setSubPage: (subPage: string) => void;
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+  onExecuteStrategy?: (strategy: any) => void;
+};
+
 export const AiAssistant = ({
   staff,
   orders,
@@ -7,8 +17,8 @@ export const AiAssistant = ({
   setSubPage,
   isOpen,
   setIsOpen,
-  onExecuteStrategy, // Prop for strategy handshake
-}) => {
+  onExecuteStrategy,
+}: AiAssistantProps) => {
   const [query, setQuery] = React.useState("");
   const [response, setResponse] = React.useState(
     "Welcome, Sanjay. How shall we optimize Spice Garden today?"
